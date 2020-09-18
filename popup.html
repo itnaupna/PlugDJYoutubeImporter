@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        body {
+            width: 300px;
+            background-color: #222222;
+            color: white;
+            border: 8px solid;
+            border-color: black;
+            margin: 0px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .btn {
+            cursor: pointer;
+            border: 1px solid;
+            padding: 1px;
+        }
+
+        .btn:hover {
+            color: cyan;
+        }
+
+        .btn:active {
+            color: red;
+        }
+
+        #youtubesearch {
+            padding: 1px;
+            text-align: center;
+        }
+
+        .row {
+            font-size: 20px;
+            line-height: 25px;
+            padding: 2px;
+            border-style: solid;
+            border-width: 1px 0px;
+            border-color: white;
+            margin: 3px;
+        }
+
+        .row:hover {
+            background-color: #333333;
+            cursor: pointer;
+        }
+
+        .row:active {
+            cursor: default;
+            background-color: #444444;
+        }
+
+        .activated {
+            font-weight: bolder;
+            color: deepskyblue;
+        }
+
+        .count {
+            font-size: 0.7em;
+            font-weight: lighter;
+            color: #aaaaaa;
+        }
+
+        #youtubeResult {
+            display: none;
+
+        }
+
+        #userList {
+            padding-top: 3px;
+        }
+
+        .txtModifier {
+            background-color: transparent;
+            border: 0 solid black;
+            color: white;
+            height: 1.1em;
+        }
+
+        #youtubeThumbnail {
+            width: 120px;
+            height: 90px;
+            background-image: url('https://i.ytimg.com/vi/EIMLftG2a8k/default.jpg');
+            /*background-color: white;*/
+            display: inline-block;
+            text-align: right;
+            text-shadow: 1px 1px 2px #000000, -1px -1px 2px #000000, -1px 1px 2px #000000, 1px -1px 2px #000000;
+            padding-right: 2px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h1 id="tempid"> plug.dj 유튜브추가기 </h1>
+
+    <div id="youtubesearch">
+        <input type="text" id="txtYoutube" autocomplete="off" value="" maxlength="11">
+        <span class="btn" id="btnSearch">정보보기</span>
+        <hr>
+        <div id="youtubeResult">
+            <span id="youtubeThumbnail"></span><br />
+            가수 : <input type="text" class="txtModifier" id="txtSinger" length="15" autocomplete="off" maxlength="30"><br />
+            제목 : <input type="text" class="txtModifier" id="txtTitle" length="15" autocomplete="off" maxlength="30"><br />
+            <span style="font-size:0.9em;">* 수정할 정보 직접 클릭해서 수정가능 *</span>
+            <input type="text" class="txtHidden" id="txtYoutubeID" style="display:none;">
+            <input type="text" class="txtHidden" id="txtDuration" style="display:none;">
+        </div>
+        <hr>
+    </div>
+    <div style="float:left; margin-left:3px;" class="btn" id="btnRefresh">플레이리스트 새로고침</div>
+    <div style="float:right; margin-right:3px;">
+        <label><input type=checkbox id="isAppend">목록 맨 뒤에 추가하기</label>
+    </div>
+
+    <br />
+
+    <div id="userList">
+    </div>
+
+    <div style="height:1px;"></div>
+
+    <div style="text-align: left; position:absolute; top:8px;">
+        <div id="statusBar">
+            대기중
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
